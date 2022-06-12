@@ -8,8 +8,10 @@ using System.Text.Json;
 
 namespace identity_server
 {
-    public static class Config
+    public  class Config
     {
+
+   
         public static List<TestUser> Users
         {
             get
@@ -114,9 +116,10 @@ namespace identity_server
 
           AllowedGrantTypes = GrantTypes.Code,
 
-          RedirectUris = {"http://localhost:8080/login/oauth2/code/dotnet"},
-          FrontChannelLogoutUri = "https://localhost:8080/signout-oidc",
-          PostLogoutRedirectUris = {"https://localhost:8080/signout-callback-oidc"},
+
+          RedirectUris = {"https://java-client-1.herokuapp.com/login/oauth2/code/dotnet"},
+          FrontChannelLogoutUri = "https://java-client-1.herokuapp.com/signout-oidc",
+          PostLogoutRedirectUris = { "https://java-client-1.herokuapp.com/signout-callback-oidc" },
 
           AllowOfflineAccess = true,
           AllowedScopes = {"openid", "profile", "weatherapi.read"},
