@@ -12,8 +12,8 @@ service.AddIdentityServer()
     .AddInMemoryIdentityResources(Config.IdentityResources)
     .AddInMemoryApiResources(Config.ApiResources)
     .AddInMemoryApiScopes(Config.ApiScopes)
-    .AddTestUsers(Config.Users)
-    .AddDeveloperSigningCredential();
+    .AddTestUsers(Config.Users);
+    //.AddDeveloperSigningCredential();
 
 var app = builder.Build();
 

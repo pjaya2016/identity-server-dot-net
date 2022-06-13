@@ -117,14 +117,14 @@ namespace identity_server
           AllowedGrantTypes = GrantTypes.Code,
 
 
-          RedirectUris = {"https://java-client-2.herokuapp.com/login/oauth2/code/dotnet"},
+          RedirectUris = {"https://java-client-1.herokuapp.com/login/oauth2/code/dotnet"},
           FrontChannelLogoutUri = "https://java-client-1.herokuapp.com/signout-oidc",
           PostLogoutRedirectUris = { "https://java-client-1.herokuapp.com/signout-callback-oidc" },
 
           AllowOfflineAccess = true,
           AllowedScopes = {"openid", "profile", "weatherapi.read"},
           RequirePkce = false,
-          RequireConsent = true,
+          RequireConsent = false,
           AllowPlainTextPkce = false
         },
           };
