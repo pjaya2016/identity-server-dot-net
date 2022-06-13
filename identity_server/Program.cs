@@ -12,8 +12,8 @@ service.AddIdentityServer()
     .AddInMemoryIdentityResources(Config.IdentityResources)
     .AddInMemoryApiResources(Config.ApiResources)
     .AddInMemoryApiScopes(Config.ApiScopes)
-    .AddTestUsers(Config.Users);
-    //.AddDeveloperSigningCredential();
+    .AddTestUsers(Config.Users)
+    .AddDeveloperSigningCredential();
 
 var app = builder.Build();
 
@@ -23,7 +23,10 @@ app.UseCors();
 
 app.UseIdentityServer();
 app.UseAuthorization();
-
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.Lax
+});
 app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
 
 app.Run();
