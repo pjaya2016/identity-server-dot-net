@@ -124,7 +124,7 @@ namespace identity_server
           AllowOfflineAccess = true,
           AllowedScopes = {"openid", "profile", "weatherapi.read"},
           RequirePkce = false,
-          RequireConsent = false,
+          RequireConsent = true,
           AllowPlainTextPkce = false
         },
           };
