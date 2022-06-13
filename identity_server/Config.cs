@@ -127,6 +127,25 @@ namespace identity_server
           RequireConsent = true,
           AllowPlainTextPkce = false
         },
+
+            new Client
+            {
+              ClientId = "interactive_game",
+              ClientSecrets = {new Secret("SuperSecretPassword".Sha256())},
+
+              AllowedGrantTypes = GrantTypes.Code,
+
+
+              RedirectUris = {"https://powerful-tundra-15569.herokuapp.com/login/oauth2/code/dotnet"},
+              FrontChannelLogoutUri = "https://powerful-tundra-15569.herokuapp.com/signout-oidc",
+              PostLogoutRedirectUris = { "https://powerful-tundra-15569.herokuapp.com/signout-callback-oidc" },
+
+              AllowOfflineAccess = true,
+              AllowedScopes = {"openid", "profile"},
+              RequirePkce = false,
+              RequireConsent = true,
+              AllowPlainTextPkce = false
+            },
           };
     }
 }
